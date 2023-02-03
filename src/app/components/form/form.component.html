@@ -1,0 +1,109 @@
+<div class="center-screen">
+  <div class="card">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="col mt-3" style="margin-left: 1rem">
+        <div class="row">
+          <div class="col">
+            <label class="form-label">Email</label>
+            <input
+              type="text"
+              formControlName="email"
+              placeholder="example@gmail.com"
+            />
+          </div>
+        </div>
+        <div class="row mt-1">
+          <div class="col">
+            <label class="form-label"> Password</label>
+            <input
+              type="password"
+              formControlName="password"
+              placeholder="********"
+            />
+          </div>
+        </div>
+
+        <div class="row mt-1" style="display: inherit">
+          <div class="col" style="display: flex">
+            <label class="form-label fixed">Tweet Message</label>
+            <textarea
+              type="text"
+              formControlName="message"
+              placeholder="Your tweet here.."
+            ></textarea>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <small
+              *ngIf="
+                userForm.controls['email'].dirty &&
+                userForm.controls['email'].errors as errors
+              "
+              class="mt-1"
+            >
+              <span *ngIf="errors.required">* Email is required </span>
+              <span *ngIf="errors.email"
+                >* Please enter a valid email format</span
+              >
+              <span *ngIf="errors.maxlength"
+                >* Email cannot exceed 50 characters</span
+              >
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <small
+              *ngIf="
+                userForm.controls['password'].dirty &&
+                userForm.controls['password'].errors as errors
+              "
+              class="mt-1"
+            >
+              <span *ngIf="errors.required">* Password is required </span>
+              <span *ngIf="errors.pattern"
+                >* Please enter a valid password</span
+              >
+              <span *ngIf="errors.maxlength"
+                >* Password cannot exceed 50 characters</span
+              >
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <small
+              *ngIf="
+                userForm.controls['message'].dirty &&
+                userForm.controls['message'].errors as errors
+              "
+              class="mt-1"
+            >
+              <span *ngIf="errors.required"
+                >* You must supply a Tweet Message</span
+              >
+              <span *ngIf="errors.maxlength"
+                >* Password cannot exceed 140 characters</span
+              >
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <small class="mt-1">
+            <span *ngIf="userForm.dirty && userForm.errors?.userExists"
+              >* User doesn't exists</span
+            >
+          </small>
+        </div>
+      </div>
+      <button
+        [disabled]="userForm.invalid"
+        type="submit"
+        class="btn btn-secondary m-2"
+      >
+        Post Tweet
+      </button>
+    </form>
+  </div>
+</div>

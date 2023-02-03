@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormComponent } from './form/form.component';
-import { TableComponent } from './table/table.component';
+import { FormComponent } from './components/form/form.component';
+import { TableComponent } from './components/table/table.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'form',
     component: FormComponent,
   },
   {
-    path: 'table',
+    path: 'tweets/:email',
     component: TableComponent,
   },
 ];

@@ -1,0 +1,49 @@
+
+.center-screen {
+  width: 450px;
+  height: 300px;
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+}
+
+label {
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  width: 100px;
+  margin-left: 1rem !important;
+}
+
+input {
+  width: 175px;
+}
+
+textarea {
+  width: 175px;
+  margin-left: 20px;
+}
+
+.btn-primary {
+ margin: 1rem;
+}
+
+.fixed {
+  width: 80px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+span {
+  font-size: small;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: red;
+  margin-left: 131px;
+}

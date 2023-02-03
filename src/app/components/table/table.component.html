@@ -1,0 +1,19 @@
+<div class="table-container">
+  <button class="btn btn-secondary mb-2" routerLink="/form">Go back</button>
+  <table class="table table-sm">
+    <thead>
+      <tr class="table-active">
+        <th scope="col">Full Name</th>
+        <th scope="col">Posted On</th>
+        <th scope="col">Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tweet of member.tweets">
+        <th scope="row">{{ member.fullName }}</th>
+        <td>{{ tweet.postedOn | date : "medium" }}</td>
+        <td>{{ tweet.message }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
